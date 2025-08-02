@@ -103,7 +103,7 @@ const MainForm = () => {
 				<Button
 					type="submit"
 					disabled={Loading}
-					className="w-full bg-gradient-to-b cursor-pointer from-rose-500 to-rose-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]">
+					className="w-full bg-gradient-to-b cursor-pointer from-rose-600 to-rose-700 text-white shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset]">
 					{Loading ? (
 						<span className="flex items-center justify-center">
 							<Loader2 className="mr-2 h-4 w-4 animate-spin" />
