@@ -86,7 +86,7 @@ const MainForm = () => {
 					name="message"
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Email</FormLabel>
+							<FormLabel>Message</FormLabel>
 							<FormControl>
 								<Textarea
                                 

@@ -8,12 +8,12 @@ export function ProjectCard({ project }: { project: Project }) {
   const { name, description, images, projectLink } = project;
 
   return (
-    <div className="w-full ">
+    <div className="w-full h-full ">
       <div className="flex flex-col justify-center rounded-lg p-4">
         <div className="flex flex-wrap items-stretch justify-center gap-4">
-          <MinimalCard className="flex w-[560px] flex-col">
+          <MinimalCard className="flex  flex-col">
             <MinimalCardImage
-              className="h-[320px]  flex-shrink-0"
+              className="h-[320px]   flex-shrink-0"
               src={images[0]}
               alt={name}
             />
