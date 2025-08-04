@@ -1,19 +1,18 @@
-import React from "react";
+import Image from "next/image";
 import Link from "next/link";
+
 const Logo = () => {
-	return (
-<Link href="/" className="text-2xl font-bold">
-							<span className="font-black flex items-center gap-1">
-								<span className=" dark:text-gray-500">{"</>"}</span>
-								<span>
-									<span className="text-gray-900 dark:text-white">Port</span>
-									<span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-rose-700">
-										folio
-									</span>
-								</span>
-							</span>
-						</Link>
-	);
+  return (
+    <Link href="/" className="flex items-center gap-2">
+      <Image
+        src="/icon0.svg" // or your public path
+        alt="UNAIN Logo"
+        width={120}
+        height={40}
+        priority
+      />
+    </Link>
+  );
 };
 
 export default Logo;
