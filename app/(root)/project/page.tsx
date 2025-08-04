@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { client } from '@/sanity/lib/client';
 import { PROJECT_FETCH_QUERY } from '@/sanity/lib/queries';
 import { Project } from '@/types';
+import { Metadata } from 'next';
 import React from 'react'
 
 const ProjectPage =  async() => {
@@ -49,3 +50,42 @@ const ProjectPage =  async() => {
 
 export default ProjectPage
 export const revalidate = 60;
+
+
+
+
+
+// AI Companion Project Page
+export const aiCompanionMetadata: Metadata = {
+  title: "AI  Project | UNAIN NextJs Developer | Voice AI Application",
+  description: "AI Companion Project | Unain | Voice AI Application built with VAPI, Next.js, and advanced AI technology. Experience natural voice conversations with intelligent AI companions tailored to your needs.",
+  
+  keywords: [
+    "AI Companion",
+    "Voice AI",
+    "VAPI Integration",
+    "Next.js AI Project",
+    "AI Voice Assistant",
+    "Voice Technology",
+    "AI Chat Application",
+    "Machine Learning Project",
+    "Conversational AI",
+    "UNAIN Projects",
+	"Wisera"
+  ],
+  
+  openGraph: {
+    title: "AI Companion Wisera | Voice AI Application by UNAIN",
+    description: "Experience natural voice conversations with intelligent AI companions. Built with VAPI and Next.js by UNAIN.",
+    url: 'https://wisera.vercel.app/',
+    images: ['https://ik.imagekit.io/a3gy4rsgb/portfolioimages/screencapture-wisera-vercel-app-2025-08-01-13_04_22.png?updatedAt=1754035533383'],
+    type: 'article',
+  },
+  
+  twitter: {
+    title: "AI Companion | Voice AI Application by UNAIN",
+    description: "Experience natural voice conversations with intelligent AI companions. Built with VAPI and Next.js.",
+    images: ['https://ik.imagekit.io/a3gy4rsgb/portfolioimages/screencapture-wisera-vercel-app-2025-08-01-13_04_22.png?updatedAt=1754035533383'],
+  }
+}
+
