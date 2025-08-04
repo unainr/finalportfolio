@@ -53,39 +53,35 @@ export const revalidate = 60;
 
 
 
-
-
-// AI Companion Project Page
-export const aiCompanionMetadata: Metadata = {
-  title: "AI  Project | UNAIN NextJs Developer | Voice AI Application",
-  description: "AI Companion Project | Unain | Voice AI Application built with VAPI, Next.js, and advanced AI technology. Experience natural voice conversations with intelligent AI companions tailored to your needs.",
+export const metadata: Metadata = {
+  title: "Projects | UNAIN NextJs Developer | Full Stack & AI Portfolio",
+  description: "Projects | Unain | Software Engineer | Web Developer | UI/UX Designer | Full-Stack Developer | AI Expert | Explore 30+ completed projects including AI applications, e-commerce platforms, and modern web solutions built with React, Next.js, and cutting-edge technologies.",
   
   keywords: [
-    "AI Companion",
-    "Voice AI",
-    "VAPI Integration",
-    "Next.js AI Project",
-    "AI Voice Assistant",
-    "Voice Technology",
-    "AI Chat Application",
-    "Machine Learning Project",
-    "Conversational AI",
     "UNAIN Projects",
-	"Wisera"
+    "NextJs Developer Portfolio",
+    "Full Stack Projects",
+    "AI Projects",
+    "React Projects",
+    "Web Development Portfolio",
+    "Software Engineer Projects",
+    "UI/UX Design Projects",
+    "E-commerce Development",
+    "Modern Web Applications"
   ],
   
   openGraph: {
-    title: "AI Companion Wisera | Voice AI Application by UNAIN",
-    description: "Experience natural voice conversations with intelligent AI companions. Built with VAPI and Next.js by UNAIN.",
-    url: 'https://wisera.vercel.app/',
-    images: ['https://ik.imagekit.io/a3gy4rsgb/portfolioimages/screencapture-wisera-vercel-app-2025-08-01-13_04_22.png?updatedAt=1754035533383'],
-    type: 'article',
+    title: "Projects Portfolio | UNAIN NextJs Developer",
+    description: "Explore 30+ completed projects showcasing expertise in AI applications, e-commerce platforms, and modern web development.",
+    url: 'https://unainr.vercel.app/projects',
+    images: ['/projects-og.jpg'],
+    type: 'website',
   },
   
   twitter: {
-    title: "AI Companion | Voice AI Application by UNAIN",
-    description: "Experience natural voice conversations with intelligent AI companions. Built with VAPI and Next.js.",
-    images: ['https://ik.imagekit.io/a3gy4rsgb/portfolioimages/screencapture-wisera-vercel-app-2025-08-01-13_04_22.png?updatedAt=1754035533383'],
+    title: "Projects Portfolio | UNAIN NextJs Developer", 
+    description: "Explore 50+ completed projects showcasing expertise in AI applications, e-commerce platforms, and modern web development.",
+    images: ['/projects-og.jpg'],
   }
 }
 
