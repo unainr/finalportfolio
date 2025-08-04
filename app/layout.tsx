@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: "Portfolio | UNAIN NextJs Developer | Full Stack & AI Specialist",
+  title: "UNAIN | NextJs Developer | Full Stack & AI Specialist",
   description: "Portfolio | Unain | Software Engineer | Web Developer | UI/UX Designer | Full-Stack Developer | AI Expert | React, Next.js, Node.js specialist building scalable web applications, e-commerce platforms, and AI-powered solutions. 30+ projects completed.",
   
   keywords: [
