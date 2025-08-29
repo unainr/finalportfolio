@@ -5,9 +5,9 @@ const Logo = () => {
   return (
     <Link href="/" className="flex items-center gap-2">
       <Image
-        src="/icon0.svg" // or your public path
+        src="/mainlogo.png" // or your public path
         alt="UNAIN Logo"
-        width={120}
+        width={100}
         height={40}
         priority
       />
