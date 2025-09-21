@@ -6,14 +6,14 @@ export const TextSection = () => {
 	return (
 		<div className="max-w-7xl relative mx-auto z-10 py-10 md:py-20 px-4 w-full left-0 top-0 text-center">
 			<h1 className="text-2xl md:text-4xl lg:text-6xl font-bold dark:text-white">
-				MERN Stack <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-rose-700 animate-gradient">Developer</span>
+				Our <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-rose-700 animate-gradient">Project</span>
 				
 			</h1>
-			<p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 mx-auto">
+			{/* <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 mx-auto">
 			Full-Stack Developer GenAI & SaaS Innovator Building Scalable, High-Performance Web Apps with Next.js & React
-			</p>
+			</p> */}
 
-			<motion.div
+			{/* <motion.div
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				transition={{ delay: 0.7, duration: 0.8 }}
@@ -35,7 +35,7 @@ export const TextSection = () => {
 </Button>
 
 				</Link>
-			</motion.div>
+			</motion.div> */}
 		</div>
 	);
 };

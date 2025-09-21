@@ -1,4 +1,5 @@
 import { ProjectCard } from '@/components/cards/project-card';
+import { HeroSection } from '@/components/hero/hero-section';
 import { GradientHeading } from '@/components/slider/GradientHeading';
 import { Button } from '@/components/ui/button';
 import { client } from '@/sanity/lib/client';
@@ -10,11 +11,14 @@ import React from 'react'
 const ProjectPage =  async() => {
     const projects = await client.fetch(PROJECT_FETCH_QUERY);
   return (
+    <>
+			<HeroSection />
+    
     <div>
       {projects?.length > 0 ? (
-				<section className="my-30">
+				<section>
 					<div className=" mx-auto px-8">
-						<div className="text-center mb-16">
+						{/* <div className="text-center mb-16">
 							<GradientHeading className="my-4" size="xl">
 								All{" "}
 								<span className="bg-clip-text text-transparent  bg-gradient-to-r from-rose-600 to-rose-700 animate-gradient">
@@ -26,7 +30,7 @@ const ProjectPage =  async() => {
 								Explore some of my recent work showcasing web development
 								expertise across different industries and technologies.
 							</p>
-						</div>
+						</div> */}
 
 						<div
 							id="portfolio"
@@ -45,6 +49,7 @@ const ProjectPage =  async() => {
 				</div>
 			)}
     </div>
+    </>
   )
 }
 
