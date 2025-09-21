@@ -15,6 +15,7 @@ import ContactForm from "@/components/home/module/ContactForm";
 import MainHeroSection from "@/components/main-hero";
 import Features from "@/components/home/module/FeaturedSection";
 import { HowWeWorkBento } from "@/components/home/module/SkillsSection";
+import TechStackIcons from "@/components/teach-list";
 
 const Home = async () => {
 	const projects = await client.fetch(PROJECT_FETCH_QUERY);
@@ -73,6 +74,7 @@ const Home = async () => {
 			)}
 
 			<HowWeWorkBento />
+			<TechStackIcons/>
 			<Experience />
 			<TopProject />
 			<ContactForm />
