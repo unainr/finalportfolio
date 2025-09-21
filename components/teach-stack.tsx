@@ -36,7 +36,7 @@ const TechNotification = ({ name, category, icon, color }: TechItem) => {
   return (
     <figure
       className={cn(
-        "relative mx-auto min-h-fit w-full max-w-md cursor-pointer overflow-hidden rounded-2xl p-4",
+        "relative mx-auto  max-w-md cursor-pointer overflow-hidden rounded-2xl p-4",
         // animation styles
         "transition-all duration-200 ease-in-out hover:scale-[103%]",
         // light styles

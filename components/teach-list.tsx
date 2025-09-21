@@ -7,7 +7,7 @@ import { GradientHeading } from "./slider/GradientHeading"
 export default function TechStackIcons() {
   return (
     <>
-      <div className="container mx-auto px-6 mb-16 ">
+      <div className="container overflow-hidden mx-auto px-6 mb-20 ">
         <div className=" mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left Column - Text Content */}
