@@ -9,22 +9,24 @@ import { Button } from "@/components/ui/button";
 import { Project } from "@/types";
 import { GradientHeading } from "@/components/slider/GradientHeading";
 import TextScrollSlide from "@/components/home/module/TextScroll";
-import { AboutSection } from "@/components/home/module/About";
-import { SkillsSection } from "@/components/home/module/SkillsSection";
 import Experience from "@/components/home/module/Experience";
 import { TopProject } from "@/components/home/module/FeaturedProject";
 import ContactForm from "@/components/home/module/ContactForm";
+import MainHeroSection from "@/components/main-hero";
+import Features from "@/components/home/module/FeaturedSection";
+import { HowWeWorkBento } from "@/components/home/module/SkillsSection";
 
 const Home = async () => {
 	const projects = await client.fetch(PROJECT_FETCH_QUERY);
 	return (
 		<>
-			<HeroSection />
+			{/* <HeroSection /> */}
+			<MainHeroSection />
 			<div className="my-16">
 				<TextScrollSlide />
 			</div>
-			<LogoCarouselMain />
-			<AboutSection/>
+			{/* <LogoCarouselMain /> */}
+			<Features />
 			{projects?.length > 0 ? (
 				<section className="my-20">
 					<div className=" mx-auto px-8">
@@ -45,7 +47,7 @@ const Home = async () => {
 						<div
 							id="portfolio"
 							className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 w-full mx-auto">
-							{projects.slice(0, 6).map((project: Project) => (
+							{projects.slice(0, 4).map((project: Project) => (
 								<div key={project._id} className="w-full h-full flex flex-col">
 									<ProjectCard project={project} />
 								</div>
@@ -70,10 +72,10 @@ const Home = async () => {
 				</div>
 			)}
 
-			<SkillsSection/>
-			<Experience/>
-			<TopProject/>
-			<ContactForm/>
+			<HowWeWorkBento />
+			<Experience />
+			<TopProject />
+			<ContactForm />
 		</>
 	);
 };

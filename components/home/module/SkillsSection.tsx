@@ -2,161 +2,99 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  IconCode,
-  IconDatabase,
-  IconTools,
-  IconServer,
-} from "@tabler/icons-react";
+import { IconCode, IconDatabase, IconTools } from "@tabler/icons-react";
+import { Bot, Calendar, Bell, Share2, FileText } from "lucide-react";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Bot } from "lucide-react";
 
-const skillCategories = [
+const processSteps = [
   {
-    title: "Backend Development",
-    icon: <IconDatabase className="w-8 h-8" />,
-    description: "Server-side technologies and database management",
-    skills: [
-      { name: "Node.js / Express", level: 85, category: "Runtime" },
-      { name: "Appwrite", level: 80, category: "BaaS" },
-      { name: "MongoDB / Mongoose", level: 85, category: "Database" },
-      { name: "MySQL / PostgreSQL", level: 78, category: "Database" },
-      { name: "Supabase", level: 82, category: "BaaS" },
-      { name: "Laravel", level: 70, category: "Framework" },
-    ],
+    title: "Discovery & Strategy",
+    description: "We start by understanding your business goals, audience, and requirements to create a comprehensive project roadmap.",
   },
   {
-    title: "Frontend Development",
-    icon: <IconCode className="w-8 h-8" />,
-    description: "Modern UI/UX and interactive web applications",
-    skills: [
-      { name: "Next.js", level: 90, category: "Framework" },
-      { name: "React.js", level: 88, category: "Library" },
-      { name: "TypeScript", level: 85, category: "Language" },
-      { name: "Tailwind CSS", level: 92, category: "Styling" },
-      { name: "JavaScript", level: 90, category: "Language" },
-      { name: "Framer Motion", level: 78, category: "Animation" },
-    ],
+    title: "Design & Prototyping",
+    description: "Crafting user-friendly UI/UX wireframes and interactive prototypes with modern design systems for optimal user experience.",
   },
   {
-    title: "DevOps & Deployment",
-    icon: <IconTools className="w-8 h-8" />,
-    description: "Development tools and deployment solutions",
-    skills: [
-      { name: "Git/GitHub", level: 90, category: "Version Control" },
-      { name: "Docker", level: 80, category: "Containerization" },
-      { name: "Vercel", level: 90, category: "Cloud Platform" },
-      { name: "Netlify", level: 80, category: "Cloud Platform" },
-      { name: "CI/CD (GitHub Actions)", level: 80, category: "Automation" },
-      { name: "Sentry", level: 70, category: "Monitoring" },
-    ],
+    title: "Development",
+    description: "Agile development of scalable frontend, backend, and AI integrations with clean code architecture and best practices.",
   },
   {
-    title: "AI & Voice Applications",
-    icon: <Bot className="w-8 h-8" />,
-    description: "AI-powered applications and voice assistants",
-    skills: [
-      { name: "Google Gemini", level: 84, category: "Multimodal AI" },
-      { name: "OpenAI API (GPT-4, Whisper)", level: 78, category: "AI Integration" },
-      { name: "Groq (LLaMA 3, Mixtral)", level: 82, category: "LLM Hosting" },
-      { name: "Meta LLaMA", level: 80, category: "Open-Source LLM" },
-      { name: "AI Agent Development", level: 77, category: "AI Systems" },
-      { name: "Image Generation", level: 80, category: "Generative AI" },
-    ],
+    title: "Deployment & Growth",
+    description: "Seamless launch with CI/CD pipelines, performance monitoring, and continuous optimization for long-term success.",
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      staggerChildren: 0.15,
-    },
+const workflowFeatures = [
+  {
+    icon: <FileText className="w-6 h-6" />,
+    title: "Document Everything",
+    description: "We maintain comprehensive documentation throughout the entire development process for transparency and future scalability.",
+    highlights: [
+      "Project requirements & specifications",
+      "Technical architecture documentation", 
+      "API documentation & guides",
+      "Deployment & maintenance guides"
+    ]
   },
-};
-
-const itemVariants: any = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.7,
-      ease: [0.25, 0.46, 0.45, 0.94],
-    },
+  {
+    icon: <Bell className="w-6 h-6" />,
+    title: "Real-time Updates", 
+    description: "Stay informed with instant notifications about project milestones, code deployments, and important developments.",
+    highlights: [
+      "Daily progress reports",
+      "Milestone completion alerts",
+      "Code deployment notifications",
+      "Issue resolution updates"
+    ]
   },
-};
+  {
+    icon: <Share2 className="w-6 h-6" />,
+    title: "Seamless Integrations",
+    description: "Connect with 100+ tools and services including payment gateways, analytics, CRMs, and third-party APIs for enhanced functionality.",
+    highlights: [
+      "Payment gateway integrations",
+      "Analytics & monitoring tools",
+      "CRM & marketing platforms", 
+      "Custom API integrations"
+    ]
+  },
+  {
+    icon: <Calendar className="w-6 h-6" />,
+    title: "Structured Timeline",
+    description: "Every project follows a carefully planned timeline with clear milestones, deadlines, and deliverable schedules.",
+    highlights: [
+      "Project milestone planning",
+      "Sprint-based development",
+      "Regular review meetings",
+      "Flexible timeline adjustments"
+    ]
+  }
+];
 
-interface SkillCardProps {
-  skill: {
-    name: string;
-    level: number;
-    category: string;
-  };
-  index: number;
-}
+const techStack = [
+  { name: "Next.js", category: "Frontend", icon: <IconCode className="w-5 h-5" /> },
+  { name: "React", category: "Frontend", icon: <IconCode className="w-5 h-5" /> },
+  { name: "TypeScript", category: "Language", icon: <IconCode className="w-5 h-5" /> },
+  { name: "Tailwind CSS", category: "Styling", icon: <IconCode className="w-5 h-5" /> },
+  { name: "Node.js", category: "Backend", icon: <IconDatabase className="w-5 h-5" /> },
+  { name: "MongoDB", category: "Database", icon: <IconDatabase className="w-5 h-5" /> },
+  { name: "PostgreSQL", category: "Database", icon: <IconDatabase className="w-5 h-5" /> },
+  { name: "Docker", category: "DevOps", icon: <IconTools className="w-5 h-5" /> },
+  { name: "Vercel", category: "Deployment", icon: <IconTools className="w-5 h-5" /> },
+  { name: "OpenAI API", category: "AI", icon: <Bot className="w-5 h-5" /> },
+  { name: "Google Gemini", category: "AI", icon: <Bot className="w-5 h-5" /> },
+];
 
-const SkillCard: React.FC<SkillCardProps> = ({ skill, index }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      viewport={{ once: true }}
-      className="space-y-3 group"
-    >
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <span className="font-medium transition-colors duration-300">
-            {skill.name}
-          </span>
-          <Badge
-            variant="secondary"
-            className="text-xs bg-rose-600/10 text-rose-600 border-rose-600/20 hover:bg-rose-600/20 transition-colors duration-300"
-          >
-            {skill.category}
-          </Badge>
-        </div>
-        <span className="text-sm font-semibold text-rose-600 group-hover:text-rose-600 transition-colors duration-300">
-          {skill.level}%
-        </span>
-      </div>
-
-      <div className="relative">
-        <div className="h-2 rounded-full overflow-hidden backdrop-blur-sm">
-          <motion.div
-            initial={{ width: 0 }}
-            whileInView={{ width: `${skill.level}%` }}
-            transition={{ duration: 1.8, delay: index * 0.2, ease: "easeOut" }}
-            className="h-full bg-gradient-to-r from-rose-600 to-rose-700 rounded-full relative overflow-hidden"
-            style={{
-              backgroundSize: "200% 100%",
-              animation: "shimmer 3s infinite",
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse" />
-          </motion.div>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-export function SkillsSection() {
+export function HowWeWorkBento() {
   return (
     <section className="py-24 relative overflow-hidden bg-gradient-to-br">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/6 w-72 h-72 from-rose-600 to-rose-700 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl animate-pulse delay-2000" />
-      </div>
-
+      {/* Background Decoration */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(230,10,100,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(230,10,100,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-      <div className=" mx-auto px-4 relative z-10">
+      <div className="mx-auto px-4 relative z-10">
+        {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -164,99 +102,137 @@ export function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <motion.h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <span>Technical</span>{" "}
-            <span className="relative">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-rose-700 animate-gradient">
-                Expertise
-              </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+            <span>How We</span>{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-rose-600 to-rose-700 animate-gradient">
+              Work
             </span>
-          </motion.h2>
-
-          <motion.p
-            className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-          >
-            Crafting digital experiences with{" "}
-            <span className="text-rose-600 font-medium">
-              cutting-edge technologies
-            </span>{" "}
-            and modern development practices that drive innovation.
-          </motion.p>
+          </h2>
+          <p className="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            A clear process and the right tools help us deliver{" "}
+            <span className="text-rose-600 font-medium">scalable, AI-powered solutions</span>{" "}
+            that drive business growth.
+          </p>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-8 mb-20"
-        >
-          {skillCategories.map((category, categoryIndex) => (
+        {/* Process Section */}
+        <div className="grid md:grid-cols-2 gap-8 mb-20">
+          {processSteps.map((step, idx) => (
             <motion.div
-              key={categoryIndex}
-              variants={itemVariants}
-              className="group"
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              viewport={{ once: true }}
             >
-              <Card className="h-full hover:border-rose-600/50 backdrop-blur-md transition-all duration-500 hover:shadow-2xl hover:shadow-rose-600/20">
-                <CardHeader className="pb-6">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 rounded-xl bg-rose-600/10 text-rose-600 group-hover:bg-rose-600/20 transition-all duration-300">
-                      {category.icon}
+              <Card className="hover:border-rose-600/50 transition-all duration-500 hover:shadow-xl hover:shadow-rose-600/20 h-full">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 rounded-full bg-rose-600 text-white flex items-center justify-center text-sm font-bold">
+                      {idx + 1}
                     </div>
-                    <div>
-                      <h3 className="text-xl font-bold group-hover:text-rose-600 transition-colors duration-300">
-                        {category.title}
-                      </h3>
-                      <p className="text-sm mt-1 transition-colors duration-300">
-                        {category.description}
-                      </p>
-                    </div>
+                    <h3 className="text-xl font-semibold text-rose-600">{step.title}</h3>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-5">
-                  {category.skills.map((skill, skillIndex) => (
-                    <SkillCard key={skillIndex} skill={skill} index={skillIndex} />
-                  ))}
+                <CardContent>
+                  <p className="text-sm leading-relaxed">{step.description}</p>
                 </CardContent>
               </Card>
             </motion.div>
           ))}
+        </div>
+
+        {/* Workflow Features Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mb-20"
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-4">Our Workflow Excellence</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              We've refined our workflow to ensure transparency, efficiency, and exceptional results in every project we deliver.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {workflowFeatures.map((feature, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: idx % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="group"
+              >
+                <Card className="hover:border-rose-600/30 transition-all duration-300 hover:shadow-lg h-full">
+                  <CardHeader>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="p-2 rounded-lg bg-rose-600/10 text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-colors duration-300">
+                        {feature.icon}
+                      </div>
+                      <h4 className="text-xl font-semibold">{feature.title}</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {feature.highlights.map((highlight, highlightIdx) => (
+                        <li key={highlightIdx} className="flex items-start gap-2 text-sm">
+                          <div className="w-1.5 h-1.5 rounded-full bg-rose-600 mt-2 flex-shrink-0" />
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Tech Stack */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold mb-4">Our Tech Stack</h3>
+            <p className="text-muted-foreground">
+              The tools and technologies we use to build modern, scalable applications.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4">
+            {techStack.map((tech, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: idx * 0.05 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <Badge
+                  variant="secondary"
+                  className="flex items-center gap-2 px-4 py-2 bg-rose-600/10 text-rose-600 border border-rose-600/20 hover:bg-rose-600 hover:text-white transition-colors duration-300 cursor-pointer"
+                >
+                  {tech.icon}
+                  {tech.name}
+                </Badge>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-20 w-24 h-24 border border-rose-600/20 rounded-full animate-spin-slow" />
-      <div className="absolute bottom-20 left-20 w-16 h-16 border border-rose-600/30 rounded-full animate-pulse" />
-      <div className="absolute top-1/2 right-4 w-2 h-20 bg-gradient-to-b from-rose-600 to-rose-700  rounded-full animate-pulse delay-1000" />
-
+      {/* Simple Animations */}
       <style jsx>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes shimmer {
-          0%,
-          100% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-        }
         @keyframes gradient {
           0%,
           100% {
@@ -265,9 +241,6 @@ export function SkillsSection() {
           50% {
             background-position: 100% 50%;
           }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 20s linear infinite;
         }
         .animate-gradient {
           background-size: 200% 200%;

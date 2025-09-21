@@ -10,7 +10,7 @@ export const TextSection = () => {
 				
 			</h1>
 			<p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 mx-auto">
-				I develop AI-powered applications and intelligent agents that solve real business problems. Specializing in conversational AI, automated workflows, and generative solutions using modern web technologies
+			Full-Stack Developer GenAI & SaaS Innovator Building Scalable, High-Performance Web Apps with Next.js & React
 			</p>
 
 			<motion.div
