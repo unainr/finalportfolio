@@ -77,15 +77,13 @@ export default function Header2() {
 
   return (
     <>
-      <motion.header
+      <header
         className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
           isScrolled
             ? 'border-border/50 bg-background/80 border-b shadow-sm backdrop-blur-md'
             : 'bg-transparent'
         }`}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+        
       >
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 items-center justify-between">
@@ -156,7 +154,7 @@ export default function Header2() {
             </motion.button>
           </div>
         </div>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {isMobileMenuOpen && (

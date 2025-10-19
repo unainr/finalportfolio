@@ -1,6 +1,4 @@
 import React from "react";
-import { HeroSection } from "@/components/hero/hero-section";
-import { LogoCarouselMain } from "@/components/slider/LogoCarouselMain";
 import { PROJECT_FETCH_QUERY } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { ProjectCard } from "@/components/cards/project-card";
@@ -16,6 +14,7 @@ import MainHeroSection from "@/components/main-hero";
 import Features from "@/components/home/module/FeaturedSection";
 import { HowWeWorkBento } from "@/components/home/module/SkillsSection";
 import TechStackIcons from "@/components/teach-list";
+import FeaturesCards from "@/components/home/module/features-grid";
 
 const Home = async () => {
 	const projects = await client.fetch(PROJECT_FETCH_QUERY);
@@ -72,8 +71,8 @@ const Home = async () => {
 					<p className="text-gray-400 text-lg font-medium">No Projects Found</p>
 				</div>
 			)}
-
-			<HowWeWorkBento />
+			<FeaturesCards/>
+			{/* <HowWeWorkBento /> */}
 			<TechStackIcons/>
 			<Experience />
 			<TopProject />
@@ -83,4 +82,3 @@ const Home = async () => {
 };
 
 export default Home;
-export const revalidate = 60;
