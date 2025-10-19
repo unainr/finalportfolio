@@ -11,6 +11,9 @@ importers:
       '@hookform/resolvers':
         specifier: ^5.2.1
         version: 5.2.1(react-hook-form@7.61.1(react@19.1.0))
+      '@paper-design/shaders-react':
+        specifier: ^0.0.57
+        version: 0.0.57(@types/react@19.1.9)(react@19.1.0)
       '@radix-ui/react-dialog':
         specifier: ^1.1.14
         version: 1.1.14(@types/react-dom@19.1.7(@types/react@19.1.9))(@types/react@19.1.9)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -1746,6 +1749,18 @@ packages:
 
   '@octokit/types@13.10.0':
     resolution: {integrity: sha512-ifLaO34EbbPj0Xgro4G5lP5asESjwHracYJvVaPIyXMuiuXLlhic3S47cBdTb+jfODkTE5YtGCLt3Ay3+J97sA==}
+
+  '@paper-design/shaders-react@0.0.57':
+    resolution: {integrity: sha512-PUr//I3Fdk4l44ORt6NNGPgz4MRz+DDNjAWK9B/hNlLZrKPKdBJtiXYUlQBpcJfnBUjq3sy2VJk6tNdby8o/2g==}
+    peerDependencies:
+      '@types/react': ^18 || ^19
+      react: ^18 || ^19
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
+  '@paper-design/shaders@0.0.57':
+    resolution: {integrity: sha512-2bV7CqLcfA9paFOdH0a5NQuqzyAKep4Zf5j7ll78bCV6lzFz5/z0TMjduR+cd+DrSWGzdJfVQE8QC7f7AmcQQQ==}
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -9050,6 +9065,15 @@ snapshots:
   '@octokit/types@13.10.0':
     dependencies:
       '@octokit/openapi-types': 24.2.0
+
+  '@paper-design/shaders-react@0.0.57(@types/react@19.1.9)(react@19.1.0)':
+    dependencies:
+      '@paper-design/shaders': 0.0.57
+      react: 19.1.0
+    optionalDependencies:
+      '@types/react': 19.1.9
+
+  '@paper-design/shaders@0.0.57': {}
 
   '@pkgjs/parseargs@0.11.0':
     optional: true

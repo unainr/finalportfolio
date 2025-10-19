@@ -65,3 +65,80 @@ export const allLogos = [
     thumbnail: "https://www.svgrepo.com/show/373845/mongo.svg",
   },
 ];
+
+
+// gradient-card data
+export const cardData = [
+  {
+    badgeText: "Open / Invite-priority",
+    badgeColor: "#F59E0B", // Amber
+    title: "Client Projects",
+    description:
+      "We start by understanding your business goals and requirements to create a comprehensive project roadmap. Then craft scalable, AI-powered solutions with clean code architecture using React, Next.js, Express.js, and modern tools.",
+    ctaText: "Start a project",
+    ctaHref: "/contact",
+    imageUrl:
+      "https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-CVv0qK2DYZbOAQP2LboVFgQGt0UMfB.png&w=320&q=75",
+    gradient: "orange" as const,
+    features: [
+      "Discovery & strategy session",
+      "UI/UX wireframes & prototyping",
+      "Agile development with best practices",
+      "CI/CD deployment & monitoring"
+    ]
+  },
+  {
+    badgeText: "Open for applications",
+    badgeColor: "#4B5563", // Gray
+    title: "Collaborations",
+    description:
+      "Open to collaborating on exciting projects with transparent workflow and real-time updates. From AI companions to SaaS platforms, we maintain comprehensive documentation and deliver milestone-based progress.",
+    ctaText: "Collaborate",
+    ctaHref: "/projects",
+    imageUrl:
+      "https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-5i9EDsbgEZk9k7NBeKt3ImNXkx0F66.png&w=320&q=75",
+    gradient: "gray" as const,
+    features: [
+      "Daily progress reports",
+      "Technical architecture documentation",
+      "Code deployment notifications",
+      "Issue resolution updates"
+    ]
+  },
+  {
+    badgeText: "Invite only",
+    badgeColor: "#8B5CF6", // Purple
+    title: "Mentorship",
+    description:
+      "1-on-1 mentorship on Full Stack development with structured timelines and clear deliverables. Learn Next.js, Express.js, Prisma, Drizzle, Appwrite, and Supabase through hands-on guidance and comprehensive documentation.",
+    ctaText: "Request invite",
+    ctaHref: "/mentorship",
+    imageUrl:
+      "https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-5WJZLkaCfLUnCYpgNz89tPx5C4KYgJ.png&w=320&q=75",
+    gradient: "purple" as const,
+    features: [
+      "Project requirements & specifications",
+      "API documentation & guides",
+      "Deployment & maintenance guides",
+      "Milestone completion tracking"
+    ]
+  },
+  {
+    badgeText: "Invite only",
+    badgeColor: "#10B981", // Green
+    title: "Partnerships",
+    description:
+      "Partner with us to co-create polished MVPs with efficient, transparent processes. We deliver scalable, AI-powered solutions for startups and agencies with modern design systems, seamless CI/CD pipelines, and continuous optimization.",
+    ctaText: "Get in touch",
+    ctaHref: "/contact",
+    imageUrl:
+      "https://www.thiings.co/_next/image?url=https%3A%2F%2Flftz25oez4aqbxpq.public.blob.vercel-storage.com%2Fimage-Q24CTBwBqnBrGujxuykBW9GfOYTdeE.png&w=320&q=75",
+    gradient: "green" as const,
+    features: [
+      "Comprehensive project documentation",
+      "Real-time milestone updates",
+      "Performance monitoring & optimization",
+      "Long-term growth support"
+    ]
+  },
+];

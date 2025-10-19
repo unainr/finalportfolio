@@ -160,11 +160,13 @@ export const Hero = ({ description }: { description: string }) => {
 								Free Call
 							</Button>
 						</Link>
+							<Link  href={"/project"}>
 						<Button
 							variant="outline"
 							className="border border-rose-600 bg-transparent shadow-[0px_2px_0px_0px_rgba(255,255,255,0.3)_inset] dark:shadow-[0px_2px_0px_0px_rgba(0,0,0,0.3)_inset] hover:bg-rose-50 dark:hover:bg-rose-950">
-							View Services
+							View Project
 						</Button>{" "}
+								</Link>
 					</div>
 				</div>
 			</div>
