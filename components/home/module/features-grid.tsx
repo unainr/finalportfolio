@@ -1,4 +1,3 @@
-"use client"
 
 import type React from "react"
 import {
@@ -57,7 +56,7 @@ const features: Feature[] = [
   },
 ];
 
-export default function FeaturesCards() {
+export default  function FeaturesCards() {
   const getShaderConfig = (index: number) => {
     const configs:any = [
       {

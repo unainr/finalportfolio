@@ -1,20 +1,15 @@
-"use client"
-
-import { motion } from "framer-motion"
 import { TechStackAnimatedList } from "./teach-stack"
 import { GradientHeading } from "./slider/GradientHeading"
 
-export default function TechStackIcons() {
+export default  function TechStackIcons() {
   return (
     <>
       <div className="container overflow-hidden mx-auto px-6 mb-20 ">
         <div className=" mx-auto">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             {/* Left Column - Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
+            <div
+             
               className="space-y-8"
             >
               <div>
@@ -45,17 +40,15 @@ export default function TechStackIcons() {
                   solutions.
                 </p>
               </div>
-            </motion.div>
+            </div>
 
             {/* Right Column - Animated Tech Stack List */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+            <div
+             
               className="flex justify-center"
             >
               <TechStackAnimatedList />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

@@ -2,13 +2,8 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import Earth from "@/components/ui/globe";
 import { SparklesCore } from "@/components/ui/sparkles";
-import { Label } from "@/components/ui/label";
-import { Check, Loader2 } from "lucide-react";
 import MainForm from "./Form";
 
 export default function ContactForm() {

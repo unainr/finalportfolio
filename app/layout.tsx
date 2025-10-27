@@ -16,12 +16,15 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://unainr.vercel.app"), // ✅ ADD THIS LINE
+
   title: "UNAIN | NextJs Developer | Full Stack & AI Specialist",
-  description: "Portfolio | Unain | Software Engineer | Web Developer | UI/UX Designer | Full-Stack Developer | AI Expert | React, Next.js, Node.js specialist building scalable web applications, e-commerce platforms, and AI-powered solutions. 30+ projects completed.",
-  
+  description:
+    "Portfolio | Unain | Software Engineer | Web Developer | UI/UX Designer | Full-Stack Developer | AI Expert | React, Next.js, Node.js specialist building scalable web applications, e-commerce platforms, and AI-powered solutions. 30+ projects completed.",
+
   keywords: [
     "Full Stack Developer",
-    "React Developer", 
+    "React Developer",
     "Next.js Developer",
     "Node.js Developer",
     "AI Developer",
@@ -44,68 +47,65 @@ export const metadata: Metadata = {
     "CMS Development",
     "UI/UX Developer",
     "Cloudinary",
-    "API Development"
+    "API Development",
   ],
-  authors: [{ name: "Muhammad  Unain " }],
-  creator: "Muhammad Unain ",
-  publisher: " Muhammad Unain ",
-  
+  authors: [{ name: "Muhammad Unain" }],
+  creator: "Muhammad Unain",
+  publisher: "Muhammad Unain",
+
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  
+
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://unainr.vercel.app',
-    title: "Muhammad Unain  | Full Stack Developer & AI Specialist",
-    description: "Full Stack Developer specializing in React, Next.js, Node.js, and AI integration. I build scalable web applications, e-commerce platforms, and AI-powered solutions.",
-    siteName: "Muhammad Unain  Portfolio",
+    type: "website",
+    locale: "en_US",
+    url: "https://unainr.vercel.app",
+    title: "Muhammad Unain | Full Stack Developer & AI Specialist",
+    description:
+      "Full Stack Developer specializing in React, Next.js, Node.js, and AI integration. I build scalable web applications, e-commerce platforms, and AI-powered solutions.",
+    siteName: "Muhammad Unain Portfolio",
     images: [
       {
-        url: '/og-image.jpg', // Add your image to public folder
+        url: "/6.png",
         width: 1200,
         height: 630,
-        alt: 'Muhammad Unain  - Full Stack Developer Portfolio',
-      }
+        alt: "Muhammad Unain - Full Stack Developer Portfolio",
+      },
     ],
   },
-  
+
   twitter: {
-    card: 'summary_large_image',
-    title: "Muhammad Unain  | Full Stack Developer & AI Specialist",
-    description: "Full Stack Developer specializing in React, Next.js, Node.js, and AI integration. Building modern web applications and AI solutions.",
-    images: ['/og-image.jpg'], // Same image as OpenGraph
-    creator: '@unainr', // Replace with your actual Twitter handle
+    card: "summary_large_image",
+    title: "Muhammad Unain | Full Stack Developer & AI Specialist",
+    description:
+      "Full Stack Developer specializing in React, Next.js, Node.js, and AI integration. Building modern web applications and AI solutions.",
+    images: ["/6.png"],
+    creator: "@unainr",
   },
-  
-  verification: {
-    google: 'your-google-verification-code', // Add your Google Search Console verification
-    // yandex: 'your-yandex-verification-code',
-    // yahoo: 'your-yahoo-verification-code',
-  },
-  
+
   alternates: {
-    canonical: 'https://unainr.vercel.app',
+    canonical: "https://unainr.vercel.app",
   },
-  
-  category: 'technology',
-  
+
+  category: "technology",
+
   other: {
-    'application-name': 'Muhammad Unain  Portfolio',
-    'apple-mobile-web-app-title': 'Muhammad Unain ',
-    'msapplication-TileColor': '#000000',
-    'theme-color': '#000000',
-  }
-}
+    "application-name": "Muhammad Unain Portfolio",
+    "apple-mobile-web-app-title": "Muhammad Unain",
+    "msapplication-TileColor": "#000000",
+    "theme-color": "#000000",
+  },
+};
+
 
 export default function RootLayout({
 	children,

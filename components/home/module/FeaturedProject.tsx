@@ -68,8 +68,8 @@ const AnimatedTestimonials = ({
 	}, [autoplay, handleNext]);
 
 	const isActive = (index: number) => index === active;
+const randomRotate = () => `${(Math.floor(Math.random() * 16) - 8)}deg`;
 
-	const randomRotate = () => `${Math.floor(Math.random() * 16) - 8}deg`;
 
 	return (
 		<div className="mx-auto px-4 py-20 font-sans antialiased max-w-6xl md:px-12">
@@ -174,7 +174,8 @@ const AnimatedTestimonials = ({
 	);
 };
 
-export function TopProject() {
+export  function TopProject() {
+
 	return (
 		<div className="relative flex my-10 w-full items-center justify-center overflow-hidden bg-slate-50 dark:bg-slate-950">
 			<style>
