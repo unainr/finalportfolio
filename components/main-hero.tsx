@@ -1,7 +1,7 @@
 import { Hero } from "./home/module/Voide";
 
-export default function MainHeroSection() {
-  
+export default  function MainHeroSection() {
+
   return (
     <div className="h-svh max-w-full relative">
       <Hero 

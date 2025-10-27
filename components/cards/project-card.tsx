@@ -4,7 +4,8 @@ import { Button } from "@/components/ui/button"
 import { ExternalLink } from "lucide-react"
 import Link from "next/link";
 
-export function ProjectCard({ project }: { project: Project }) {
+export async function ProjectCard({ project }: { project: Project }) {
+  'use cache'
   const { name, description, images, projectLink } = project;
 
   return (
