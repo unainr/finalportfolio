@@ -15,6 +15,9 @@ const Home = async () => {
 		<>
 			{/* <HeroSection /> */}
 			<MainHeroSection />
+		
+			{/* <ThreeHero/> */}
+			
 			<div className="my-16">
 				<TextScrollSlide />
 			</div>

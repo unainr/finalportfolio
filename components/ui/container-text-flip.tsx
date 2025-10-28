@@ -1,59 +1,104 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+
+import React, { useState, useEffect, useId } from "react";
+
+import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
-export const LayoutTextFlip = ({
-  text = "Build Amazing",
-  words = ["Landing Pages", "Component Blocks", "Page Sections", "3D Shaders"],
-  duration = 3000,
-}: {
-  text: string;
-  words: string[];
-  duration?: number;
-}) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export interface ContainerTextFlipProps {
+  /** Array of words to cycle through in the animation */
+  words?: string[];
+  /** Time in milliseconds between word transitions */
+  interval?: number;
+  /** Additional CSS classes to apply to the container */
+  className?: string;
+  /** Additional CSS classes to apply to the text */
+  textClassName?: string;
+  /** Duration of the transition animation in milliseconds */
+  animationDuration?: number;
+}
+
+export function ContainerTextFlip({
+  words = ["Startups", "Creators", "Businesses", "Developers","Innovators"],
+  interval = 3000,
+  className,
+  textClassName,
+  animationDuration = 700,
+}: ContainerTextFlipProps) {
+  const id = useId();
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [width, setWidth] = useState(100);
+  const textRef = React.useRef(null);
+
+  const updateWidthForWord = () => {
+    if (textRef.current) {
+      // Add some padding to the text width (30px on each side)
+      // @ts-ignore
+      const textWidth = textRef.current.scrollWidth + 30;
+      setWidth(textWidth);
+    }
+  };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, duration);
+    // Update width whenever the word changes
+    updateWidthForWord();
+  }, [currentWordIndex]);
 
-    return () => clearInterval(interval);
-  }, []);
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+      // Width will be updated in the effect that depends on currentWordIndex
+    }, interval);
+
+    return () => clearInterval(intervalId);
+  }, [words, interval]);
 
   return (
-    <>
-      <motion.span
-        layoutId="subtext"
-        className="text-2xl  font-bold tracking-tight drop-shadow-lg md:text-4xl "
+    <motion.div
+      layout
+      layoutId={`words-here-${id}`}
+      animate={{ width }}
+      transition={{ duration: animationDuration / 2000 }}
+      className={cn(
+        "relative inline-block rounded-lg pt-2 pb-3 text-center text-4xl font-bold text-rose-500 md:text-7xl dark:text-rose-600",
+        "[background:linear-gradient(to_bottom,#f3f4f6,#e5e7eb)]",
+        "shadow-[inset_0_-1px_#d1d5db,inset_0_0_0_1px_#d1d5db,_0_4px_8px_#d1d5db]",
+        "dark:[background:linear-gradient(to_bottom,#374151,#1f2937)]",
+        "dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),_0_4px_8px_#00000052]",
+        className,
+      )}
+      key={words[currentWordIndex]}
+    >
+      <motion.div
+        transition={{
+          duration: animationDuration / 1000,
+          ease: "easeInOut",
+        }}
+        className={cn("inline-block", textClassName)}
+        ref={textRef}
+        layoutId={`word-div-${words[currentWordIndex]}-${id}`}
       >
-        {text}
-      </motion.span>
-
-      <motion.span
-        layout
-        className="fixed w-fit  overflow-hidden rounded-md  bg-white px-4 py-1 my-1 font-sans text-2xl font-bold tracking-tight text-black shadow-sm ring shadow-black/10 ring-black/10 drop-shadow-lg md:text-4xl dark:bg-neutral-900 dark:text-white dark:shadow-sm dark:ring-1 dark:shadow-white/10 dark:ring-white/10 ml-3"
-      >
-        <AnimatePresence  mode="popLayout">
-          <motion.span
-          
-            key={currentIndex}
-            initial={{ y: -40, filter: "blur(10px)" }}
-            animate={{
-              y: 0,
-              filter: "blur(0px)",
-            }}
-            exit={{ y: 50, filter: "blur(10px)", opacity: 0 }}
-            transition={{
-              duration: 0.5,
-            }}
-            className={cn("inline-block whitespace-nowrap")}
-          >
-            {words[currentIndex]}
-          </motion.span>
-        </AnimatePresence>
-      </motion.span>
-    </>
+        <motion.div className="inline-block">
+          {words[currentWordIndex].split("").map((letter, index) => (
+            <motion.span
+              key={index}
+              initial={{
+                opacity: 0,
+                filter: "blur(10px)",
+              }}
+              animate={{
+                opacity: 1,
+                filter: "blur(0px)",
+              }}
+              transition={{
+                delay: index * 0.02,
+              }}
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
-};
+}

@@ -6,9 +6,9 @@ import { Bloom, N8AO, SMAA, EffectComposer } from "@react-three/postprocessing";
 import { useRef } from "react";
 import { Mesh } from "three";
 import { KernelSize } from "postprocessing";
-import { LayoutTextFlip } from "@/components/ui/container-text-flip";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ContainerTextFlip } from "@/components/ui/container-text-flip";
 
 function Shape() {
 	const meshRef = useRef<Mesh>(null);
@@ -146,8 +146,8 @@ export const Hero = ({ description }: { description: string }) => {
 
 			{/* Option 1: Center-left positioning */}
 			<div className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-20 max-w-lg">
-				<LayoutTextFlip
-					text="We Build Scalable AI-Powered Web Apps for"
+			{/* text="We Build Scalable AI-Powered Web Apps for" */}
+				<ContainerTextFlip
 					words={["AI Startups", "SaaS Brands", "AI Ventures", "Tech Leaders"]}
 				/>
 				<div className="my-4">
