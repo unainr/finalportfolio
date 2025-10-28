@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.2.1",
     "@paper-design/shaders-react": "^0.0.57",
     "@radix-ui/react-dialog": "^1.1.14",
@@ -62,6 +61,7 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@types/three": "^0.180.0",
+    "babel-plugin-react-compiler": "^1.0.0",
     "drizzle-kit": "^0.31.4",
     "eslint": "^9",
     "eslint-config-next": "16.0.0",

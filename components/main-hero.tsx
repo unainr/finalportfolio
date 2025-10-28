@@ -1,12 +1,12 @@
-import { Hero } from "./home/module/Voide";
+import AetherHero from "./hero/aether";
 
-export default  function MainHeroSection() {
-
-  return (
-    <div className="h-svh max-w-full relative">
-      <Hero 
-        description="We design and develop high-performance SaaS platforms, GenAI solutions, and modern web applications using Next.js, React, and scalable cloud technologies  built to help your business move faster."
-      />
-    </div>
-  );
+export default function MainHeroSection() {
+	return (
+		<AetherHero
+			title="We Build Scalable AI-Powered Web Apps for "
+			subtitle="Smart Scalable Stunning We bring your ideas to life with AI-powered web experiences that stand out"
+			align="center"
+			overlayGradient="linear-gradient(180deg, #000000bb 0%, #00000055 40%, transparent)"
+		/>
+	);
 }
